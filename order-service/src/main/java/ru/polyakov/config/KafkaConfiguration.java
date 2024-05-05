@@ -1,6 +1,5 @@
 package ru.polyakov.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +16,7 @@ import java.util.Map;
 public class KafkaConfiguration {
 
     @Bean
-    public ConsumerFactory<String, OrderStatusEvent> consumerFactory(ObjectMapper mapper) {
+    public ConsumerFactory<String, OrderStatusEvent> consumerFactory() {
         Map<String, Object> config = new HashMap<>();
 
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
